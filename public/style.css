@@ -554,3 +554,116 @@ textarea {
 .card, .task-card, .btn {
   animation: fadeIn 0.6s ease-out;
 }
+
+/* Features Section - Rectangle Layout */
+.features-section {
+  padding: 3rem 0;
+}
+
+.features-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card-rectangle {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--pink);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card-rectangle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+.feature-card-rectangle:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.feature-card-rectangle:nth-child(2) {
+  border-left-color: var(--purple);
+}
+
+.feature-card-rectangle:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--purple), var(--blue));
+}
+
+.feature-card-rectangle:nth-child(3) {
+  border-left-color: var(--green);
+}
+
+.feature-card-rectangle:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--green), var(--blue));
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feature-card-rectangle:nth-child(2) .feature-icon {
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feature-card-rectangle:nth-child(3) .feature-icon {
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-family: "Patrick Hand", cursive;
+}
+
+.feature-description {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive Design for Features */
+@media (max-width: 768px) {
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-card-rectangle {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .feature-card-rectangle {
+    min-width: 350px;
+  }
+}
